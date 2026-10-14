@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Editing & Web Development Agency</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&family=Playball&display=swap"
+    rel="stylesheet">
+  <!-- Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <!-- Scroll Timeline Indicator -->
+  <div class="scroll-timeline" id="scrollTimeline">
+    <div class="timeline-track" id="timelineTrack">
+      <div class="timeline-progress" id="timelineProgress"></div>
+      <div class="timeline-ticks" id="timelineTicks"></div>
+      <div class="timeline-playhead-wrapper" id="playheadWrapper">
+        <div class="timeline-playhead-badge" id="playheadBadge">0%</div>
+        <div class="timeline-playhead-line"></div>
+      </div>
+    </div>
+    <div class="timeline-live">
+      <div class="timeline-live-dot"></div>
+      LIVE • <span id="timelineClock"></span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="/logo.png" alt="Sonu Logo" class="logo-img" />
+        <span>Sonu</span>
+      </div>
+      <div class="nav-links">
+        <a href="#works">Our works</a>
+        <a href="#webworks">Web works</a>
+        <a href="#approach">Approach</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact" class="btn btn-dark nav-btn nav-btn-mobile">Book a call</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <a href="#contact" class="btn btn-dark nav-btn nav-btn-desktop">Book a call</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <!-- Orbit Animation Background -->
+      <div class="orbit-container">
+        <div class="orbit-ring">
+          <!-- TikTok -->
+          <div class="orbit-node" style="--angle: 0deg;">
+            <div class="orbit-icon-wrapper" style="--size: 45px; --tilt: -15deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon"><i class="ph-fill ph-tiktok-logo" style="color: #000000;"></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- CapCut -->
+          <div class="orbit-node" style="--angle: 40deg;">
+            <div class="orbit-icon-wrapper" style="--size: 50px; --tilt: 10deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon" style="background: #000000; border-color: #333;">
+                  <svg viewBox="0 0 24 24" style="width: 60%; height: 60%;" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 3H10.5L6.5 10.5H12.5L16.5 3Z" fill="#00F0FF" />
+                    <path d="M7.5 21H13.5L17.5 13.5H11.5L7.5 21Z" fill="#00F0FF" />
+                    <path d="M16.5 3L12.5 10.5H17.5L21.5 3H16.5Z" fill="#FFFFFF" />
+                    <path d="M7.5 21L11.5 13.5H6.5L2.5 21H7.5Z" fill="#FFFFFF" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Instagram -->
+          <div class="orbit-node" style="--angle: 80deg;">
+            <div class="orbit-icon-wrapper" style="--size: 55px; --tilt: 20deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon"><i class="ph-fill ph-instagram-logo" style="color: #FF512F;"></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- Premiere Pro -->
+          <div class="orbit-node" style="--angle: 120deg;">
+            <div class="orbit-icon-wrapper" style="--size: 50px; --tilt: -5deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon" style="background: #1b002c; border-color: #3d0066;">
+                  <svg viewBox="0 0 256 256" style="width: 65%; height: 65%;">
+                    <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle"
+                      font-family="'Inter', sans-serif" font-weight="900" font-size="120" fill="#2faaff">Pr</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- YouTube -->
+          <div class="orbit-node" style="--angle: 160deg;">
+            <div class="orbit-icon-wrapper" style="--size: 45px; --tilt: -10deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon"><i class="ph-fill ph-youtube-logo" style="color: #FF0000;"></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- DaVinci Resolve -->
+          <div class="orbit-node" style="--angle: 200deg;">
+            <div class="orbit-icon-wrapper" style="--size: 50px; --tilt: 15deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon" style="background: #111; border-color: #222;">
+                  <svg viewBox="0 0 256 256" style="width: 70%; height: 70%;">
+                    <g fill-opacity="0.85">
+                      <circle cx="128" cy="96" r="48" fill="#FF4B4B" />
+                      <circle cx="96" cy="152" r="48" fill="#00D26A" />
+                      <circle cx="160" cy="152" r="48" fill="#0080FF" />
+                    </g>
+                    <circle cx="128" cy="133" r="16" fill="#111" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Facebook -->
+          <div class="orbit-node" style="--angle: 240deg;">
+            <div class="orbit-icon-wrapper" style="--size: 50px; --tilt: 15deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon"><i class="ph-fill ph-facebook-logo" style="color: #1877F2;"></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- After Effects -->
+          <div class="orbit-node" style="--angle: 280deg;">
+            <div class="orbit-icon-wrapper" style="--size: 50px; --tilt: 5deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon" style="background: #1b002c; border-color: #3d0066;">
+                  <svg viewBox="0 0 256 256" style="width: 65%; height: 65%;">
+                    <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle"
+                      font-family="'Inter', sans-serif" font-weight="900" font-size="120" fill="#d199ff">Ae</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Film / Video editing theme icon -->
+          <div class="orbit-node" style="--angle: 320deg;">
+            <div class="orbit-icon-wrapper" style="--size: 45px; --tilt: 25deg;">
+              <div class="orbit-icon-counter">
+                <div class="orbit-icon"><i class="ph-fill ph-film-strip" style="color: #6C5CE7;"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-top-badge badge-trustpilot">
+        <i class="ph-fill ph-star" style="color: #00B67A; font-size: 1.1rem; margin-right: 0.2rem;"></i> 4.9/5 Reviews on TrustPilot
+      </div>
+
+      <h1 class="hero-title">
+        Agency that makes your<br>
+        <span class="cursive-highlight">videos & reels</span>
+        <span class="reels-logo-container">
+          <svg viewBox="0 0 256 256" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="reels-gradient" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#FF382C" />
+                <stop offset="100%" stop-color="#FF6A1F" />
+              </linearGradient>
+            </defs>
+            <rect width="256" height="256" rx="70" fill="url(#reels-gradient)" />
+            <rect x="48" y="48" width="160" height="160" rx="35" fill="none" stroke="white" stroke-width="16" />
+            <path d="M48,96 L208,96 M48,160 L208,160 M96,48 L96,96 M160,48 L160,96 M96,160 L96,208 M160,160 L160,208" stroke="white" stroke-width="12" stroke-linecap="round" />
+            <polygon points="112,105 168,128 112,151" fill="white" />
+          </svg>
+        </span>
+        <span class="cursive-highlight">viral</span>
+      </h1>
+      <p class="hero-subtitle">Short-form video editing for Influencers, Creators and Brands</p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-hero-primary">Book A Free Meeting <i class="ph-bold ph-arrow-up-right"></i></a>
+        <a href="#works" class="btn btn-hero-secondary">View Our Works</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper" style="margin-top: 4rem;">
+      <img src="/hero-creator.png" alt="Websites Design & Videos Production" class="hero-img">
+    </div>
+  </section>
+
+  <!-- Trusted By / Logos Section -->
+  <section class="logos-section">
+    <p class="logos-title">Trusted by 10,000+ founders & business owners</p>
+    <div class="marquee-wrapper">
+      <div class="logos-track">
+        <!-- Group 1 -->
+        <div class="marquee-group">
+          <div class="logo-item">Lum<span class="lum-box"></span>Labs</div>
+          <div class="logo-item"><i class="ph-fill ph-asterisk" style="color:#FF512F; font-size:1.8rem;"></i> Craftgram</div>
+          <div class="logo-item"><i class="ph-fill ph-chart-bar" style="color:#A334FA; transform:rotate(90deg);"></i> Pulse</div>
+          <div class="logo-item"><span style="font-style:italic; font-weight:800;">swift</span> <i class="ph-bold ph-caret-right" style="color:#00B67A;"></i></div>
+          <div class="logo-item" style="font-weight:900; letter-spacing:-0.05em;">sparkle<sup style="font-size:0.5em; font-weight:600;">TM</sup></div>
+        </div>
+
+        <!-- Group 2 -->
+        <div class="marquee-group" aria-hidden="true">
+          <div class="logo-item">Lum<span class="lum-box"></span>Labs</div>
+          <div class="logo-item"><i class="ph-fill ph-asterisk" style="color:#FF512F; font-size:1.8rem;"></i> Craftgram</div>
+          <div class="logo-item"><i class="ph-fill ph-chart-bar" style="color:#A334FA; transform:rotate(90deg);"></i> Pulse</div>
+          <div class="logo-item"><span style="font-style:italic; font-weight:800;">swift</span> <i class="ph-bold ph-caret-right" style="color:#00B67A;"></i></div>
+          <div class="logo-item" style="font-weight:900; letter-spacing:-0.05em;">sparkle<sup style="font-size:0.5em; font-weight:600;">TM</sup></div>
+        </div>
+
+        <!-- Group 3 -->
+        <div class="marquee-group" aria-hidden="true">
+          <div class="logo-item">Lum<span class="lum-box"></span>Labs</div>
+          <div class="logo-item"><i class="ph-fill ph-asterisk" style="color:#FF512F; font-size:1.8rem;"></i> Craftgram</div>
+          <div class="logo-item"><i class="ph-fill ph-chart-bar" style="color:#A334FA; transform:rotate(90deg);"></i> Pulse</div>
+          <div class="logo-item"><span style="font-style:italic; font-weight:800;">swift</span> <i class="ph-bold ph-caret-right" style="color:#00B67A;"></i></div>
+          <div class="logo-item" style="font-weight:900; letter-spacing:-0.05em;">sparkle<sup style="font-size:0.5em; font-weight:600;">TM</sup></div>
+        </div>
+
+        <!-- Group 4 -->
+        <div class="marquee-group" aria-hidden="true">
+          <div class="logo-item">Lum<span class="lum-box"></span>Labs</div>
+          <div class="logo-item"><i class="ph-fill ph-asterisk" style="color:#FF512F; font-size:1.8rem;"></i> Craftgram</div>
+          <div class="logo-item"><i class="ph-fill ph-chart-bar" style="color:#A334FA; transform:rotate(90deg);"></i> Pulse</div>
+          <div class="logo-item"><span style="font-style:italic; font-weight:800;">swift</span> <i class="ph-bold ph-caret-right" style="color:#00B67A;"></i></div>
+          <div class="logo-item" style="font-weight:900; letter-spacing:-0.05em;">sparkle<sup style="font-size:0.5em; font-weight:600;">TM</sup></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Approach -->
+  <section class="services" id="approach">
+    <div class="services-header">
+      <div class="services-eyebrow"><span class="eyebrow-dot"></span>Why choose me</div>
+      <h2>I don’t just edit videos.</h2>
+      <p class="services-subtitle">I create engaging content that helps creators and brands <span class="services-title-accent">stand out online.</span></p>
+    </div>
+
+        <div class="bento-grid">
+      <!-- Card 1: Quote (Span 2x2) -->
+      <div class="bento-card bg-white bento-quote">
+        <div>
+          <div class="bento-quote-icon">“</div>
+          <h2>We make people stop and ask,<br><span>who edited that?</span></h2>
+          <p class="bento-quote-text">That reaction is the whole job. I handle the complete editing process with clean visuals, smooth transitions, subtitles, sound effects, and modern storytelling.</p>
+        </div>
+        <div class="bento-quote-footer">
+          <div>VIDEO EDITING, SINCE 2021</div>
+          <div class="bento-avail"><div class="bento-avail-dot"></div> AVAILABLE NOW</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Metrics -->
+      <div class="bento-card bg-dark bento-metrics">
+        <div class="bento-metric-item">
+          <div class="bento-metric-val">250K<span>+</span></div>
+          <div class="bento-metric-label">VIEWS GENERATED</div>
+        </div>
+        <div class="bento-metric-item">
+          <div class="bento-metric-val">75<span>+</span></div>
+          <div class="bento-metric-label">VIDEOS EDITED</div>
+        </div>
+        <div class="bento-metric-item">
+          <div class="bento-metric-val">20<span>+</span></div>
+          <div class="bento-metric-label">HAPPY CLIENTS</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Capabilities -->
+      <div class="bento-card bg-white bento-caps">
+        <div class="bento-caps-title">CAPABILITIES</div>
+        <div class="bento-caps-grid">
+          <div class="bento-cap-pill"><i class="ph ph-film-strip"></i> YouTube</div>
+          <div class="bento-cap-pill"><i class="ph ph-video-camera"></i> Shorts</div>
+          <div class="bento-cap-pill"><i class="ph ph-game-controller"></i> Gaming</div>
+          <div class="bento-cap-pill"><i class="ph ph-magic-wand"></i> VFX</div>
+          <div class="bento-cap-pill"><i class="ph ph-music-notes"></i> Sound</div>
+        </div>
+      </div>
+
+      <!-- Card 4: Showcase -->
+      <div class="bento-card bg-dark bento-showcase">
+        <div class="bento-showcase-inner">
+          <div style="color: #9CA3AF; font-size: 0.75rem; font-family: monospace; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 6px; height: 6px; background-color: #FF5722; border-radius: 50%;"></div> YOUR BRAND
+          </div>
+          <div class="bento-showcase-title">Build<br><span>bold.</span></div>
+          <button class="bento-showcase-btn">Start <i class="ph-bold ph-arrow-right"></i></button>
+          
+          <div style="position: absolute; bottom: -20px; right: -20px; font-size: 8rem; color: rgba(255,87,34,0.1); transform: rotate(-15deg); pointer-events: none;">
+            <i class="ph-fill ph-cursor-click"></i>
+          </div>
+          
+          <div style="position: absolute; bottom: 1rem; left: 2rem; font-family: monospace; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.5);">
+            DESIGNED LIVE
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Tools -->
+      <div class="bento-card bg-white bento-tools">
+        <div class="bento-tools-label"><i class="ph-fill ph-play"></i> CURRENTLY EDITING IN</div>
+        <h3>Premiere Pro & AE</h3>
+        <div class="bento-tools-pills">
+          <div class="bento-tools-pill">Pr</div>
+          <div class="bento-tools-pill">Ae</div>
+          <div class="bento-tools-pill">DaVinci</div>
+        </div>
+        <div class="bento-tools-bars">
+          <div class="bento-tools-bar" style="height: 8px;"></div>
+          <div class="bento-tools-bar" style="height: 14px;"></div>
+          <div class="bento-tools-bar" style="height: 20px;"></div>
+          <div class="bento-tools-bar" style="height: 12px;"></div>
+        </div>
+      </div>
+
+      <!-- Card 6: Review -->
+      <div class="bento-card bg-white bento-review">
+        <div style="text-align: right; font-family: monospace; font-size: 0.75rem; color: #9CA3AF; margin-bottom: 0.5rem;">REVIEW_07</div>
+        <div class="bento-stars">★★★★★</div>
+        <p class="bento-review-text">"Every edit is created to keep viewers engaged. The visual appeal and retention on my videos skyrocketed after working with him."</p>
+        <div class="bento-review-author">
+          <div class="bento-review-avatar" style="background: url('https://ui-avatars.com/api/?name=C+C&background=E8F0FE&color=5A8EF4') center/cover;"></div>
+          CONTENT CREATOR
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Works Carousel -->
+  <section class="works" id="works">
+    <div class="section-heading text-center">
+      <div class="red-line"></div>
+      <h2>Recent works for <span class="text-red">Brands</span></h2>
+    </div>
+    <div class="works-grid-wrapper" style="max-width: 1280px; margin: 0 auto; padding: 0 2rem 3.5rem;">
+      <div class="works-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.85rem;">
+        <!-- Video 9 (Contour) -->
+        <a href="https://www.youtube.com/shorts/KIoXgxNDwIg" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/KIoXgxNDwIg?autoplay=1&mute=1&loop=1&playlist=KIoXgxNDwIg&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 10 (Nice) -->
+        <a href="https://www.youtube.com/shorts/8YpeinUSR08" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/8YpeinUSR08?autoplay=1&mute=1&loop=1&playlist=8YpeinUSR08&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 1 (New) -->
+        <a href="https://www.youtube.com/shorts/vPBkDMwFZH4" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/vPBkDMwFZH4?autoplay=1&mute=1&loop=1&playlist=vPBkDMwFZH4&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 2 (New) -->
+        <a href="https://www.youtube.com/shorts/t6IZQoIWm4k" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/t6IZQoIWm4k?autoplay=1&mute=1&loop=1&playlist=t6IZQoIWm4k&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 3 (Original 1) -->
+        <a href="https://www.youtube.com/shorts/RUIWDOb05Fs" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/RUIWDOb05Fs?autoplay=1&mute=1&loop=1&playlist=RUIWDOb05Fs&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 4 (Original 2) -->
+        <a href="https://www.youtube.com/shorts/fxs-uNYCv-c" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/fxs-uNYCv-c?autoplay=1&mute=1&loop=1&playlist=fxs-uNYCv-c&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 3 -->
+        <a href="https://www.youtube.com/shorts/YHRWRe-H0nA" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/YHRWRe-H0nA?autoplay=1&mute=1&loop=1&playlist=YHRWRe-H0nA&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 4 -->
+        <a href="https://www.youtube.com/shorts/YP0bIN3e2QE" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/YP0bIN3e2QE?autoplay=1&mute=1&loop=1&playlist=YP0bIN3e2QE&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 5 -->
+        <a href="https://www.youtube.com/shorts/hj3AQsnqXT4" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/hj3AQsnqXT4?autoplay=1&mute=1&loop=1&playlist=hj3AQsnqXT4&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 6 -->
+        <a href="https://www.youtube.com/shorts/BVo64s9HkqM" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/BVo64s9HkqM?autoplay=1&mute=1&loop=1&playlist=BVo64s9HkqM&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 7 -->
+        <a href="https://www.youtube.com/shorts/21uttpZUViw" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/21uttpZUViw?autoplay=1&mute=1&loop=1&playlist=21uttpZUViw&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 8 -->
+        <a href="https://www.youtube.com/shorts/innD83cMgB8" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/innD83cMgB8?autoplay=1&mute=1&loop=1&playlist=innD83cMgB8&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 13 (New Third Row) -->
+        <a href="https://www.youtube.com/shorts/Hq_hHZvsFlI" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/Hq_hHZvsFlI?autoplay=1&mute=1&loop=1&playlist=Hq_hHZvsFlI&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 14 (New Last Row) -->
+        <a href="https://www.youtube.com/shorts/iez0BwVGWII" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/iez0BwVGWII?autoplay=1&mute=1&loop=1&playlist=iez0BwVGWII&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+        <!-- Video 15 -->
+        <a href="https://www.youtube.com/shorts/bzB6JTb3sXc" target="_blank" class="work-grid-item" style="border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 9/16; display: block; border: 1px solid #e5e7eb; max-height: 340px;">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/bzB6JTb3sXc?autoplay=1&mute=1&loop=1&playlist=bzB6JTb3sXc&controls=0&rel=0&playsinline=1" title="YouTube Short player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+        </a>
+      </div>
+    </div>
+
+    <!-- Featured Videos — 16:9 Grid -->
+    <div class="featured-videos-section">
+      <div class="featured-videos-header">
+        <h3><i class="ph-fill ph-star"></i> My Edits</h3>
+      </div>
+      <div class="featured-videos-grid bento-video-grid">
+        <!-- Card 1 (Wide Rectangle - spans 2x1) -->
+        <a href="https://www.youtube.com/watch?v=iSSXi8Bl0_0" target="_blank" class="featured-video-card bento-wide">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/iSSXi8Bl0_0?autoplay=1&mute=1&loop=1&playlist=iSSXi8Bl0_0&controls=0&rel=0&playsinline=1" title="Real Estate Investment Edit" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+          <div class="bento-overlay">
+            <div class="bento-play-icon"><i class="ph-fill ph-play"></i></div>
+          </div>
+        </a>
+        <!-- Card 2 (Wide Rectangle - spans 2x1) -->
+        <a href="https://www.youtube.com/watch?v=eeDJ3mByTTE" target="_blank" class="featured-video-card bento-wide">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/eeDJ3mByTTE?autoplay=1&mute=1&loop=1&playlist=eeDJ3mByTTE&controls=0&rel=0&playsinline=1" title="Finance Jobs & Salaries Edit" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+          <div class="bento-overlay">
+            <div class="bento-play-icon"><i class="ph-fill ph-play"></i></div>
+          </div>
+        </a>
+        <!-- Card 3 (Wide Rectangle - spans 2x1) -->
+        <a href="https://www.youtube.com/watch?v=RoKjpBWMbsw" target="_blank" class="featured-video-card bento-wide">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/RoKjpBWMbsw?autoplay=1&mute=1&loop=1&playlist=RoKjpBWMbsw&controls=0&rel=0&playsinline=1" title="Trading Watchlist Edit" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+          <div class="bento-overlay">
+            <div class="bento-play-icon"><i class="ph-fill ph-play"></i></div>
+          </div>
+        </a>
+        <!-- Card 4 (Wide Rectangle - spans 2x1) -->
+        <a href="https://www.youtube.com/watch?v=kKCAsrkbpMs" target="_blank" class="featured-video-card bento-wide">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/kKCAsrkbpMs?autoplay=1&mute=1&loop=1&playlist=kKCAsrkbpMs&controls=0&rel=0&playsinline=1" title="AI Has Finally Beat Designers Edit" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+          <div class="bento-overlay">
+            <div class="bento-play-icon"><i class="ph-fill ph-play"></i></div>
+          </div>
+        </a>
+        <!-- Card 5 (Wide Rectangle - spans 2x1) -->
+        <a href="https://www.youtube.com/watch?v=L1rNywsy5eA" target="_blank" class="featured-video-card bento-wide">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/L1rNywsy5eA?autoplay=1&mute=1&loop=1&playlist=L1rNywsy5eA&controls=0&rel=0&playsinline=1" title="Obsidian & Claude Cowork Edit" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+          <div class="bento-overlay">
+            <div class="bento-play-icon"><i class="ph-fill ph-play"></i></div>
+          </div>
+        </a>
+        <!-- Card 6 (Wide Rectangle - spans 2x1) -->
+        <a href="https://www.youtube.com/watch?v=rXG0lW0uuVc" target="_blank" class="featured-video-card bento-wide">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/rXG0lW0uuVc?autoplay=1&mute=1&loop=1&playlist=rXG0lW0uuVc&controls=0&rel=0&playsinline=1" title="Investment Banking to YouTube Edit" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; border: none; transform: scale(1.02);"></iframe>
+          <div class="bento-overlay">
+            <div class="bento-play-icon"><i class="ph-fill ph-play"></i></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="works-cta text-center">
+      <a href="https://drive.google.com/drive/u/1/folders/1JtLSgFOLQWUBCeJP-AyvjsILPZiyKhXG" target="_blank"
+        rel="noopener noreferrer" class="btn btn-light-outline">View all works <i
+          class="ph-bold ph-arrow-right"></i></a>
+    </div>
+  </section>
+
+
+  <!-- Thumbnails Section -->
+  <section class="thumbnails-section" id="thumbnails">
+    <div class="thumbnails-header-content text-center">
+      <h2>Thumbnail Designs</h2>
+      <p class="thumbnails-subtitle">Before & After my edits!</p>
+    </div>
+
+    <div class="thumbnails-gallery-container">
+      <!-- Thumbnail 1 -->
+      <div class="photo-card" id="card1">
+        <div class="tape"></div>
+        <img src="/creative-1.jpeg?v=2" alt="Make 1 Lakh Thumbnail" onerror="this.src='https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&q=80'">
+        <div class="photo-caption">Make 1 Lakh in a Month</div>
+      </div>
+
+      <!-- Thumbnail 2 -->
+      <div class="photo-card" id="card2">
+        <div class="tape alt"></div>
+        <img src="/creative-3.png?v=2" alt="Total Earnings Thumbnail" onerror="this.src='https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80'">
+        <div class="photo-caption">$125,750 Total Earnings</div>
+      </div>
+
+      <!-- Thumbnail 3 -->
+      <div class="photo-card" id="card3">
+        <div class="tape"></div>
+        <img src="/creative-2.jpeg?v=2" alt="I Almost Died Thumbnail" onerror="this.src='https://images.unsplash.com/photo-1533658252271-e945e4835848?w=600&q=80'">
+        <div class="photo-caption">I Almost Died!</div>
+      </div>
+    </div>
+  
+
+  <!-- Stats / Our Story -->
+  <section class="stats" id="story">
+    <div class="story-card">
+      <div class="story-badge">OUR SHORT STORY</div>
+      <h2 class="story-title-main">
+        Creative <span class="story-highlight">Video Editing</span> for Modern <span class="story-highlight">Creators & Brands</span>
+      </h2>
+      <p class="story-subtitle">
+        I turn raw footage into high-quality, engaging content designed to capture attention and keep viewers watching.
+      </p>
+
+      <div class="story-stats-row">
+        <div class="story-stat">
+          <h3>250K+</h3>
+          <h5>Views Generated</h5>
+        </div>
+        <div class="story-stat">
+          <h3>75+</h3>
+          <h5>Videos Edited</h5>
+        </div>
+        <div class="story-stat">
+          <h3>20+</h3>
+          <h5>Happy Clients</h5>
+        </div>
+      </div>
+
+      <div class="story-divider"></div>
+
+      <div class="story-features-grid">
+        <div class="story-feature-item">
+          <i class="ph-fill ph-check-circle"></i>
+          <span>Shorts & Reels Editing</span>
+        </div>
+        <div class="story-feature-item">
+          <i class="ph-fill ph-check-circle"></i>
+          <span>YouTube Long Video Editing</span>
+        </div>
+        <div class="story-feature-item">
+          <i class="ph-fill ph-check-circle"></i>
+          <span>Gaming Content Editing</span>
+        </div>
+        <div class="story-feature-item">
+          <i class="ph-fill ph-check-circle"></i>
+          <span>Cinematic Transitions & Effects</span>
+        </div>
+        <div class="story-feature-item">
+          <i class="ph-fill ph-check-circle"></i>
+          <span>High-Retention Storytelling</span>
+        </div>
+        <div class="story-feature-item">
+          <i class="ph-fill ph-check-circle"></i>
+          <span>Fast & Professional Delivery</span>
+        </div>
+      </div>
+
+      <div class="story-divider"></div>
+
+      <p class="story-conclusion">
+        Helping creators and businesses grow with clean visuals, smooth editing, and content that stands out online.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Offerings -->
+  <section class="offerings">
+    <div class="section-heading text-center" style="margin-bottom: 4rem;">
+      <h2>Everything you need <span class="cursive-highlight" style="font-size: 1.2em; margin-left: 0.2rem;">for
+          views</span></h2>
+    </div>
+
+                <div class="offerings-row overlapping-phones-v3">
+      <!-- Left Phone -->
+      <div class="phone-wrapper phone-left">
+        <div class="phone-popup popup-left">
+          <i class="ph-fill ph-heart" style="color: #FF3B30; font-size: 1.4rem;"></i>
+          <span style="color: #111; font-weight: 600; font-size: 1.1rem; font-family: 'Inter', sans-serif;">20K+ Likes</span>
+        </div>
+        <div class="offer-box tall-box">
+          <img src="/g-1.jpg?v=1" alt="Creative Edit 1" class="phone-bg-img">
+          <div class="phone-fade"></div>
+        </div>
+      </div>
+
+      <!-- Center Phone -->
+      <div class="phone-wrapper phone-center">
+        <div class="offer-box tall-box">
+          <div class="dynamic-island"></div>
+          <img src="/g-2.jpg?v=1" alt="Creative Edit 2" class="phone-bg-img">
+          <div class="phone-fade"></div>
+        </div>
+      </div>
+
+      <!-- Right Phone -->
+      <div class="phone-wrapper phone-right">
+        <div class="phone-popup popup-right">
+          <i class="ph-bold ph-globe" style="color: #5AC8FA; font-size: 1.4rem;"></i>
+          <span style="color: #111; font-weight: 600; font-size: 1.1rem; font-family: 'Inter', sans-serif;">2.2M Reach</span>
+        </div>
+        <div class="offer-box tall-box">
+          <img src="/g-3.jpg?v=1" alt="Creative Edit 3" class="phone-bg-img">
+          <div class="phone-fade"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="reviews-carousel">
+      <div class="reviews-track" id="reviewsTrack">
+        
+        <!-- Card 1: Video Thumbnail -->
+        <div class="review-card video-card">
+          <img src="/testimonial-1.jpg" alt="Rahul Kumar Video Testimonial">
+          <div class="video-overlay">
+            <h3 class="video-title sticker-text"></h3>
+            <div class="video-ui">
+              <div class="ui-avatar"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&q=80&auto=format&fit=crop" alt="Rahul Kumar"></div>
+              <div class="ui-action">
+                <i class="ph-fill ph-heart" style="color: #FF2E2E;"></i>
+                <span>210K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Text Review -->
+        <div class="review-card text-card">
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=150&q=80&auto=format&fit=crop"
+              alt="Rahul Kumar">
+            <div class="author-info">
+              <span class="handle">@rahul.creations</span>
+              <span class="followers">34k Followers</span>
+            </div>
+          </div>
+          <p class="review-quote">“Their editing completely changed my content game. The Reels they delivered were
+            snappy, on-trend, and exactly what my audience loves.”</p>
+          <div class="review-stats">
+            <div class="stat">
+              <span class="stat-num">250K+</span>
+              <span class="stat-label">Views gained</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">10K+</span>
+              <span class="stat-label">Followers gained</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 3: Video Thumbnail -->
+        <div class="review-card video-card">
+          <img src="/testimonial-2.jpg"
+            alt="Neha Sharma Video Testimonial">
+          <div class="video-overlay">
+            <h3 class="video-title sticker-text"></h3>
+            <div class="video-ui">
+              <div class="ui-avatar"><img
+                  src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80&auto=format&fit=crop"
+                  alt="Neha Sharma"></div>
+              <div class="ui-action">
+                <i class="ph-fill ph-heart" style="color: #FF2E2E;"></i>
+                <span>401K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Text Review -->
+        <div class="review-card text-card">
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=150&q=80&auto=format&fit=crop"
+              alt="Neha Sharma">
+            <div class="author-info">
+              <span class="handle">@neha_reels</span>
+              <span class="followers">78k Followers</span>
+            </div>
+          </div>
+          <p class="review-quote">“I never thought my Reels could look so professional. Their edits made me look premium
+            — and the growth? Unreal.”</p>
+          <div class="review-stats">
+            <div class="stat">
+              <span class="stat-num">500K+</span>
+              <span class="stat-label">Views gained</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">15K+</span>
+              <span class="stat-label">Followers gained</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-controls">
+      <button class="control-btn prev-btn"><i class="ph-bold ph-arrow-left"></i></button>
+      <button class="control-btn next-btn"><i class="ph-bold ph-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Creator Showcase Image Section -->
+  <section class="creator-showcase-section" id="brutalist">
+    <div class="creator-showcase-wrapper">
+      <img src="/creator-showcase.png" alt="Creative Web Design & Video Production Showcase" class="creator-showcase-img">
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-header text-center">
+      <h2>Pay monthly or <span class="text-red">on per-project</span></h2>
+      <p>Flexible plans tailored for your brand's specific needs.</p>
+
+      <div class="toggle-container">
+        <span class="toggle-label active">Monthly</span>
+        <div class="custom-toggle" id="priceToggle">
+          <div class="toggle-knob"></div>
+        </div>
+        <span class="toggle-label">Project</span>
+      </div>
+    </div>
+
+    <div class="pricing-cards">
+      <div class="p-card">
+        <div class="p-top">
+          <h3>Starter</h3>
+          <div class="p-price"><span class="currency">$</span><span class="amount">249</span><span
+              class="period">/mo</span></div>
+        </div>
+        <a href="#contact" class="btn btn-dark full-btn">Get Started</a>
+        <ul class="p-features">
+          <li><i class="ph-bold ph-check"></i> 8 YouTube Videos /mo</li>
+          <li><i class="ph-bold ph-check"></i> 15 Short Form /mo</li>
+          <li><i class="ph-bold ph-check"></i> Thumbnail Design</li>
+          <li><i class="ph-bold ph-check"></i> 48hr Turnaround</li>
+        </ul>
+      </div>
+
+      <div class="p-card p-popular">
+        <div class="popular-tag">Most Popular</div>
+        <div class="p-top">
+          <h3>Growth</h3>
+          <div class="p-price"><span class="currency">$</span><span class="amount">799</span><span
+              class="period">/mo</span></div>
+        </div>
+        <a href="#contact" class="btn btn-dark full-btn">Get Started</a>
+        <ul class="p-features">
+          <li><i class="ph-bold ph-check"></i> Unlimited Video Editing</li>
+          <li><i class="ph-bold ph-check"></i> Full Website Development</li>
+          <li><i class="ph-bold ph-check"></i> SEO Optimization</li>
+          <li><i class="ph-bold ph-check"></i> Dedicated Manager</li>
+          <li><i class="ph-bold ph-check"></i> Priority Support</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <div class="p-top">
+          <h3>Scale</h3>
+          <div class="p-price"><span class="amount custom">Custom</span></div>
+        </div>
+        <a href="#contact" class="btn btn-light-outline full-btn">Contact Us</a>
+        <ul class="p-features">
+          <li><i class="ph-bold ph-check"></i> Custom Scope</li>
+          <li><i class="ph-bold ph-check"></i> Full Stack Development</li>
+          <li><i class="ph-bold ph-check"></i> Advanced Animations</li>
+          <li><i class="ph-bold ph-check"></i> 24/7 Support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="faqs-section" id="faqs">
+    <div class="faq-header text-center">
+      <h2>Everything You <span class="text-red">Need to Know</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-tab"><i class="ph ph-square"></i> TURNAROUND.FRAME</div>
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span class="faq-num" style="color: #ff5722;">01</span>
+            <h4>How fast is the turnaround time?</h4>
+          </div>
+          <div class="faq-icon"><i class="ph ph-minus"></i></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-answer-inner">
+            <span class="faq-a-label">ANSWER</span>
+            <p>For standard video editing, we typically deliver within 48 hours. Website projects vary based on complexity, but usually range from 2-4 weeks from start to finish.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-tab"><i class="ph ph-square"></i> REVISIONS.FRAME</div>
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span class="faq-num" style="color: #2a6df2;">02</span>
+            <h4>Do you offer unlimited revisions?</h4>
+          </div>
+          <div class="faq-icon"><i class="ph ph-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-answer-inner">
+            <span class="faq-a-label">ANSWER</span>
+            <p>Yes! We work until you are 100% satisfied with the final product. We include unlimited reasonable revisions in all our monthly plans.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-tab"><i class="ph ph-square"></i> TECH-STACK.FRAME</div>
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span class="faq-num" style="color: #ff5722;">03</span>
+            <h4>What technologies do you use for websites?</h4>
+          </div>
+          <div class="faq-icon"><i class="ph ph-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-answer-inner">
+            <span class="faq-a-label">ANSWER</span>
+            <p>We build modern, blazing-fast websites using React, Next.js, Vite, and GSAP for animations, ensuring a premium feel and optimal performance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-tab"><i class="ph ph-square"></i> CANCELLATION.FRAME</div>
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span class="faq-num" style="color: #2a6df2;">04</span>
+            <h4>Can I pause or cancel my monthly plan?</h4>
+          </div>
+          <div class="faq-icon"><i class="ph ph-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-answer-inner">
+            <span class="faq-a-label">ANSWER</span>
+            <p>Absolutely. There are no long-term contracts. You can pause or cancel your subscription at any time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- View All Web Works Section -->
+  ﻿
+>   <!-- View All Web Works Section -->
+    <section class="webworks" id="webworks">
+      <div class="webworks-bg-glow"></div>
+      <div class="webworks-container">
+        <div class="webworks-header">
+          <div class="webworks-badge">
+            <span class="webworks-badge-dot"></span>
+            <span>CREATIVE PORTFOLIO</span>
+          </div>
+          <h2 class="webworks-title">View All <span class="gradient-text">Web Works</span></h2>
+          <p class="webworks-subtitle">Explore all my live projects and creative websites.</p>
+        </div>
+        
+        <div class="webworks-slider-wrapper">
+          <button class="webworks-nav-btn prev-btn" aria-label="Previous"><i class="ph-bold 
+ph-caret-left"></i></button>
+          <button class="webworks-nav-btn next-btn" aria-label="Next"><i class="ph-bold ph-caret-right"></i></button>
+          <div class="webworks-scroll-container">
+            <div class="webworks-track">
+              
+              <!-- Cards Set 1 -->
+  
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">dr-angaj-skandh.vercel.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-dr-angaj.png" alt="Dr Angaj Skandh Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">Dr Angaj Skandh</h3>
+                  <p class="webworks-card-desc">A professional medical or clinic website with a clean, modern 
+aesthetic and responsive layout.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://dr-angaj-skandh.vercel.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                      <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">sonuportfolioooo.netlify.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-sonu-portfolio.png" alt="Sonu Portfolio Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">Sonu Portfolio</h3>
+                  <p class="webworks-card-desc">A stunning developer portfolio showcasing high-fidelity interactive 
+elements, modern aesthetics, and fluid animations.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://sonuportfolioooo.netlify.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                      <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">swamiswaddairyfarm.netlify.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-dairy-farm.png" alt="Swami Swad Dairy Farm Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">Swami Swad Dairy Farm</h3>
+                  <p class="webworks-card-desc">A premium, conversion-optimized e-commerce landing page featuring 
+smooth product showcases, glowing hover effects, and clean, beautiful branding.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://swamiswaddairyfarm.netlify.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                      <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">toolvillage-6802c.web.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-toolsvillage.png" alt="ToolsVillage Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">ToolsVillage</h3>
+                  <p class="webworks-card-desc">The ultimate AI database and platform designed with futuristic 
+aesthetics, robust categorization, vibrant layouts, and smooth transition cards.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://toolvillage-6802c.web.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                      <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">sonukumar07.netlify.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-personal.png" alt="Personal Website Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">Personal Website</h3>
+                  <p class="webworks-card-desc">A responsive, professional personal site with cinematic typography, 
+interactive stellar orbits, and premium dark theme accents.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://sonukumar07.netlify.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                      <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">aistudentpartner.netlify.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-ai-student.png" alt="AI Student Partner Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">AI Student Partner</h3>
+                  <p class="webworks-card-desc">A sleek, intelligent dashboard designed for smart learning, combining 
+high-end AI utilities, a sidebar navigator, and a rich, glowing dark theme.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://aistudentpartner.netlify.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                      <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+  
+              <!-- Cards Set 2 (Duplicated for Infinite Scroll Loop) -->
+  
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">dr-angaj-skandh.vercel.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-dr-angaj.png" alt="Dr Angaj Skandh Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">Dr Angaj Skandh</h3>
+                  <p class="webworks-card-desc">A professional medical or clinic website with a clean, modern 
+aesthetic and responsive layout.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://dr-angaj-skandh.vercel.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                      <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="webworks-card">
+                <div class="webworks-mockup">
+                  <div class="webworks-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-url">sonuportfolioooo.netlify.app</span>
+                  </div>
+                  <div class="webworks-mockup-body">
+                    <img src="/webwork-sonu-portfolio.png" alt="Sonu Portfolio Preview" loading="lazy" />
+                  </div>
+                </div>
+                <div class="webworks-card-content">
+                  <h3 class="webworks-card-title">Sonu Portfolio</h3>
+                  <p class="webworks-card-desc">A stunning developer portfolio showcasing high-fidelity interactive 
+elements, modern aesthetics, and fluid animations.</p>
+                  <div class="webworks-card-footer">
+                    <a href="https://sonuportfolioooo.netlify.app/" target="_blank" rel="noopener noreferrer" 
+class="webworks-btn">
+                      <span>Live Preview</span>
+                        <i class="ph ph-arrow-up-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+  <footer class="footer-dark" id="contact">
+    <canvas id="footer-dots-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+    <div class="footer-cta-section" style="position: relative; z-index: 10;">
+      <h2 class="footer-cta-title">Ready to make<br><span class="footer-cta-cursive">your videos go viral?</span></h2>
+      <p class="footer-cta-subtext">We maintain a bench of pre-vetted video editors ready to be<br>trained and placed within 2-weeks on average.</p>
+      <a href="#" class="btn-book-meeting">Book A Free Meeting <i class="ph-bold ph-arrow-up-right"></i></a>
+    </div>
+
+    <div class="footer-arc-container">
+      <svg class="arc-line" width="800" height="150" viewBox="0 0 800 150" preserveAspectRatio="none">
+        <path d="M 0 150 Q 400 -50 800 150" fill="transparent" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+      </svg>
+      <div class="arc-icon arc-tiktok">
+        <img src="https://cdn.simpleicons.org/tiktok/black" width="20" height="20" alt="TikTok">
+      </div>
+      <div class="arc-icon arc-reels">
+        <img src="https://cdn.simpleicons.org/instagram/E1306C" width="22" height="22" alt="Instagram Reels">
+      </div>
+      <div class="arc-icon arc-shorts">
+        <img src="https://cdn.simpleicons.org/youtubeshorts/FF0000" width="22" height="22" alt="YouTube Shorts">
+      </div>
+    </div>
+
+    <div class="footer-white-card">
+      <div class="footer-card-inner">
+        <div class="f-col brand-col">
+          <div class="f-logo">
+            <img src="/logo.png" alt="Sonu Logo" class="logo-img" />
+            <span>Sonu</span>
+          </div>
+        </div>
+        
+        <div class="f-col-group">
+          <div class="f-col">
+            <h5>Company</h5>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Pricing</a>
+            <a href="#">Works</a>
+          </div>
+          <div class="f-col">
+            <h5>Links</h5>
+            <a href="#">Services</a>
+            <a href="#">Blogs</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">404</a>
+          </div>
+          <div class="f-col follow-col">
+            <h5>Follow Us</h5>
+            <div class="f-socials-grid">
+              <a href="https://github.com/sonukumarji7479" class="orange-social-btn" target="_blank" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              <a href="https://www.instagram.com/sonu_techzon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="orange-social-btn" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+              <a href="https://youtube.com/channel/UCc1-1yV9uLieezOky-zGEJg" class="orange-social-btn" target="_blank" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+              <a href="https://www.linkedin.com/in/sonu-kumar-5b4753280/" class="orange-social-btn" target="_blank" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+              <a href="https://facebook.com/profile.php?id=100049635426034" class="orange-social-btn" target="_blank" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-divider"></div>
+      
+      <div class="footer-bottom">
+        <div class="f-bottom-left">
+          <p>@2025 Framerbite, All Right Reserved</p>
+        </div>
+        <div class="f-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Condition</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Immersive Video Player Lightbox Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-backdrop"></div>
+    <button class="modal-close" aria-label="Close player"><i class="ph ph-x"></i></button>
+    <div class="modal-content">
+      <div class="modal-video-wrapper">
+        <iframe loading="lazy" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen id="modalIframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/917479449597" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+    aria-label="Chat on WhatsApp">
+    <i class="ph-fill ph-whatsapp-logo"></i>
+  </a>
+
+  
+
+  <!-- Custom Multiplayer Cursor -->
+  <div id="custom-cursor" class="custom-cursor">
+    <svg class="cursor-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.5 1.5 L19.5 8.5 L11.5 11.5 L8.5 19.5 Z" fill="#5b89f9" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+    <div class="cursor-label">You</div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
